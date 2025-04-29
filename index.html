@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="https://ezequiel-lee.github.io/loveschool/assets/img/poster.png" />
+    <meta property="og:title" content="Casamento Blindado" />
+    <meta property="og:description" content="Aprenda a blindar seu casamento com dicas e ensinamentos valiosos." />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+
+    <title>Casamento blindado</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="shortcut icon" href="./assets/img/favicon/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Loading -->
+    <div id="spinner" class="spinner hidden"></div>
+
+    <!-- Tela de Login -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-form">
+            <div class="image">
+                <img src="./assets/img/login.png" alt="Login">
+            </div>
+            <h2>The Love School</h2>
+            <div class="form">
+                <input autofocus type="password" id="password" placeholder="Digite a senha" />
+                <button onclick="validatePassword()">Entrar</button>
+            </div>
+
+            <!-- Link para mostrar a dica -->
+            <div class="hint">
+                <a onclick="showPasswordHint()">Dica de senha?</a>
+                <span id="passwordHintText" class="hidden">O Autor do Amor!</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="main-content">
+        <header class="site-header">
+            <img
+                src="./assets/img/logo/logo.webp"
+                alt="Logo do Site"
+                class="logo"
+            />
+        </header>
+
+        <div class="container">
+            <div class="main-video">
+                <div class="video-wrapper">
+                    <iframe
+                        id="youtube-player"
+                        src=""
+                        title="Vídeo 1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <h2 id="video-title"></h2>
+                <p id="video-description"></p>
+            </div>
+
+            <div class="video-list">
+                <h3>Lista de vídeos</h3>
+                <!-- Está dinamico no js -->
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/dados.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

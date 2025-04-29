@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #ec46ad;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.container-mensagens {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.toast.red {
+    background-color: red;
+}
+
+/* Login */
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #111;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.login-form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 360px;
+}
+
+.login-form img {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.login-form h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.login-form .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border: 1px solid #ec46ad;
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.login-form input:focus {
+    outline: none;
+    border: 1px solid #ec33a5;
+}
+
+.login-form button {
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(to right, #ff6ec4, #ec46ad);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.login-form button:hover {
+    background: linear-gradient(to right,#f164b9, #ec33a5);
+}
+
+.hint {
+    margin-top: 15px;
+}
+
+.hint a {
+    all: unset;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 10px;
+    color: #ccc!important;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hint a:hover {
+    text-decoration: underline;
+}
+
+/* Texto da dica escondido inicialmente */
+.hidden {
+    display: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Estilo do conteúdo principal */
+.main-content {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .login-form {
+        padding: 20px;
+        max-width: 90%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form input,
+    .login-form button {
+        font-size: 14px;
+    }
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 100px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: border-radius 0.3s ease-in-out;
+}
+
+.logo:hover {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-video {
+    flex: 3;
+    min-width: 300px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-list {
+    flex: 1;
+    min-width: 250px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.video-list::-webkit-scrollbar {
+    display: none;
+}
+
+.video-list h3 {
+    margin-bottom: 10px;
+}
+
+.video-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-list li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #222;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.video-list li img {
+    width: 80px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.video-list li span {
+    flex: 1;
+    color: #fff;
+}
+
+.video-list li:hover {
+    background: #444;
+}
+
+.video-item.ativo {
+    background-color: #444;
+    border-left: 2px solid #ec46ad;
+    font-weight: bold;
+}
+
+#video-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #bbb;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .main-video,
+    .video-list {
+        width: 100%;
+    }
+
+    .video-list {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    #video-title {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #video-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .video-list ul {
+        margin-top: 10px;
+    }
+
+    .video-list li img {
+        width: 70px;
+        height: 40px;
+    }
+}
